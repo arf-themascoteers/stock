@@ -11,9 +11,9 @@ import plotter
 def test():
     model = Machine()
     if not os.path.isfile("models/machine.h5"):
-        model = train.train()
-        torch.save(model, "models/machine.h5")
+        train.train()
     model = torch.load("models/machine.h5")
+
     x_train, y_train, x_test, y_test = data_reader.get_data()
 
     criterion = torch.nn.MSELoss(reduction='mean')
