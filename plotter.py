@@ -4,6 +4,7 @@ import data_reader
 def plot(y, y_pred):
     plt.plot(y, label="Original")
     plt.plot(y_pred, 'r', label="Prediction" )
+    plt.legend()
     plt.show()
 
 
