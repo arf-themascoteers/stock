@@ -15,10 +15,10 @@ def test():
     model = torch.load("models/machine.h5")
     x_train, y_train, x_test, y_test = data_reader.get_data()
 
-
+    criterion = torch.nn.MSELoss(reduction='mean')
     y_test_pred = model(x_test)
-    print(y_test_pred[10:15])
-    print(y_test[10:15])
+    loss = criterion(y_test_pred, y_test)
+    print(f"Loss: {loss}")
 
 
 if __name__ == "__main__":

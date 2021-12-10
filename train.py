@@ -12,9 +12,8 @@ def train():
     optimiser = torch.optim.Adam(model.parameters(), lr=0.01)
     x_train, y_train, x_test, y_test = data_reader.get_data()
 
-
     start_time = time.time()
-    lstm = []
+
     for t in range(200):
         y_train_pred = model(x_train)
         loss = criterion(y_train_pred, y_train)
